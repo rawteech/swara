@@ -113,3 +113,8 @@ LOGOUT_URL = reverse_lazy('logout')
 
 # email backend for development testing
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+# media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

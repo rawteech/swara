@@ -9,8 +9,7 @@ urlpatterns = [
 	url(r'^logout/$', 'django.contrib.auth.views.logout', name='logout'),
 	url(r'^logout-then-login/$', 'django.contrib.auth.views.logout_then_login', 
 		name='logout_then_login'),
-	url(r'^$', views.dashboard, name='dashboard'),
-
+	
 	# url to allow password change
 	url(r'^password-change/$', 'django.contrib.auth.views.password_change', 
 		name='password_change'),
@@ -27,6 +26,8 @@ urlpatterns = [
 	url(r'^password-reset/complete/$', 'django.contrib.auth.views.password_reset_complete', 
 		name='password_reset_complete'),
 
-	# user registration
+	# user actions
+	url(r'^$', views.dashboard, name='dashboard'),
 	url(r'^register/$', views.register, name='register'),
+	url(r'^edit/$', views.edit, name='edit'),
 ]

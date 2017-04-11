@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'account',
     'django.contrib.admin',
+    'social.apps.django_app.default',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -74,6 +75,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'swara.wsgi.application'
 
+AUTHENTICATION_BACKENDS = ('social.backends.facebook.Facebook2OAuth2',)
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
@@ -118,3 +120,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
+# Facebook app settings
+SOCIAL_AUTH_FACEBOOK_KEY = config('SOCIAL_AUTH_FACEBOOK_KEY')
+SOCIAL_AUTH_FACEBOOK_SECRET = config('SOCIAL_AUTH_FACEBOOK_SECRET')
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']

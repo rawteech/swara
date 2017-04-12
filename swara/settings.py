@@ -75,7 +75,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'swara.wsgi.application'
 
-AUTHENTICATION_BACKENDS = ('social.backends.facebook.Facebook2OAuth2',)
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.Facebook2OAuth2',
+    'social.backends.twitter.TwitterOAuth',
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
@@ -126,3 +129,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 SOCIAL_AUTH_FACEBOOK_KEY = config('SOCIAL_AUTH_FACEBOOK_KEY')
 SOCIAL_AUTH_FACEBOOK_SECRET = config('SOCIAL_AUTH_FACEBOOK_SECRET')
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+# Twitter app settings
+SOCIAL_AUTH_TWITTER_KEY = config('SOCIAL_AUTH_TWITTER_KEY')
+SOCIAL_AUTH_TWITTER_SECRET = config('SOCIAL_AUTH_TWITTER_SECRET')

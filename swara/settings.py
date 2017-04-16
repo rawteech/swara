@@ -76,7 +76,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'swara.wsgi.application'
 
+
+# Make sure to add ModelBackend incase you ran 
+# into some malfunctions of the admin insterface
 AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
     'social.backends.facebook.Facebook2OAuth2',
     'social.backends.twitter.TwitterOAuth',
 )

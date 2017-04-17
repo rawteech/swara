@@ -40,7 +40,7 @@
 
 		// when an image is clicked open URL with it
 		jQuery('#bookmarklet .images a').click(function(e){
-			selected_image = jQuery(this).children('img').attr('src');
+			selected_image = jQuery(this).children('img')[0].src;
 			// hide bookmarklet
 			jQuery('#bookmarklet').hide();
 			// open new window to submit image

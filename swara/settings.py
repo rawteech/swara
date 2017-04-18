@@ -42,7 +42,8 @@ INSTALLED_APPS = (
     'account',
     'django.contrib.admin',
     'social.apps.django_app.default',
-    'images'
+    'images',
+    'sorl.thumbnail',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -142,3 +143,5 @@ SOCIAL_AUTH_TWITTER_SECRET = config('SOCIAL_AUTH_TWITTER_SECRET')
 # Google OAuth settings
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
+
+THUMBNAIL_DEBUG = True

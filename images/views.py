@@ -5,6 +5,7 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from images.forms import ImageCreateForm
 from images.models import Image
+from common.decorators import ajax_required
 
 
 @login_required
@@ -44,6 +45,7 @@ def image_detail(request, id, slug):
 	return render(request, 'images/image/detail.html', context)
 
 
+@ajax_required
 @login_required
 @require_POST
 def image_like(request):

@@ -146,3 +146,8 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
 
 ## Uncomment this if you ran into problems with thumbnails
 # THUMBNAIL_DEBUG = True
+
+# Canonical URL for users
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
+}
